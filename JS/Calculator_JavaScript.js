@@ -43,7 +43,7 @@ function Handle_Operator(Next_Operator) {
     if (First_Operand == null) {
         Calculator.First_Operand = Value_of_Input;
     } else if (operator) {
-        const Value_Now = First_Operand = First_Operand || 0;
+        const Value_Now = First_Operand || 0;
 
         let results = Perform_Calulation[operator] (Value_Now, Value_of_Input);
 
@@ -84,7 +84,7 @@ keys.addEventListener('click' , (event) => {
     if (!target.matches('button')) {
         return;
     }
-    if (traget.classList.contains('operator')) {
+    if (target.classList.contains('operator')) {
         Handle_Operator(target.value);
         Update_Display();
         return
@@ -95,7 +95,7 @@ keys.addEventListener('click' , (event) => {
         return;
     }
     //Ensures that AC clears all
-    if (target.classList.contains('All-clear')) {
+    if (target.classList.contains('all_clear')) {
         Calculator_Reset();
         Update_Display();
         return;
